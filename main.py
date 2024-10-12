@@ -31,12 +31,12 @@ def convert(infile, locationfile, outfile, allow_record_id=True, allow_software_
         print('文件内容错误，请检查输入文件。')
         return
     nrows = table.nrows
-    if not (table.cell_value(0, 0) == '活动编号' and table.cell_value(0, 1) == '观测开始时间' and
+    if not (table.cell_value(0, 0) == '报告编号' and table.cell_value(0, 1) == '观测开始时间' and
             table.cell_value(0, 2) == '观测结束时间' and table.cell_value(0, 3) == '中文名' and
             table.cell_value(0, 4) == '学名' and table.cell_value(0, 5) == '省' and
             table.cell_value(0, 6) == '州/市' and table.cell_value(0, 7) == '区/县' and
-            table.cell_value(0, 8) == 'IUCN受胁级别' and table.cell_value(0, 9) == '国家保护等级' and
-            table.cell_value(0, 10) == 'CITES保护等级' and table.cell_value(0, 11) == '鸟种数量'):
+            table.cell_value(0, 8) == 'IUCN' and table.cell_value(0, 9) == '国内保护等级' and
+            table.cell_value(0, 10) == 'CITES' and table.cell_value(0, 11) == '鸟种数量'):
         print('文件内容错误，请检查输入文件。')
         return
 
@@ -166,10 +166,4 @@ if __name__ == '__main__':
             convert(infile, locationfile, outfile, bool1, bool2)
         except Exception as e:
             print(e)
-        finally:
-            test = input('回车继续转换新文件，输入任意内容后回车退出程序\n')
-            if test != '':
-                break
-            else:
-                continue
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+

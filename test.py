@@ -1,4 +1,4 @@
 from main import convert
 
 if __name__ == '__main__':
-    convert('infile.xls', 'locationfile.txt', 'outfile.csv')
+    convert('list2024.xls', 'location2024.txt', 'outfile.csv')
